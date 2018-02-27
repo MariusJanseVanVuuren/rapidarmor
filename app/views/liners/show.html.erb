@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @liner.company %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @liner.location %>
+</p>
+
+<p>
+  <strong>Row:</strong>
+  <%= @liner.row %>
+</p>
+
+<p>
+  <strong>Collumn:</strong>
+  <%= @liner.collumn %>
+</p>
+
+<p>
+  <strong>Structure:</strong>
+  <%= @liner.structure %>
+</p>
+
+<p>
+  <strong>Plant:</strong>
+  <%= @liner.plant %>
+</p>
+
+<%= link_to 'Edit', edit_liner_path(@liner) %> |
+<%= link_to 'Back', liners_path %>

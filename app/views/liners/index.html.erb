@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Liners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Location</th>
+      <th>Row</th>
+      <th>Collumn</th>
+      <th>Structure</th>
+      <th>Plant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @liners.each do |liner| %>
+      <tr>
+        <td><%= liner.company %></td>
+        <td><%= liner.location %></td>
+        <td><%= liner.row %></td>
+        <td><%= liner.collumn %></td>
+        <td><%= liner.structure %></td>
+        <td><%= liner.plant %></td>
+        <td><%= link_to 'Show', liner %></td>
+        <td><%= link_to 'Edit', edit_liner_path(liner) %></td>
+        <td><%= link_to 'Destroy', liner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Liner', new_liner_path %>
