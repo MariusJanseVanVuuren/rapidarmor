@@ -30,16 +30,8 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    puts("here")
-    # company = Company.find_by name: params[:company][:name]
     message = 'Company was successfully created.'
     @company = Company.new(company_params)
-    # if !company
-    #   @company = Company.new(company_params)
-    # else
-    #   @company = company
-    #   message = 'Company already exists.'
-    # end
     respond_to do |format|
       if @company.save
         format.html { redirect_to @company, notice: message }
