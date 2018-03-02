@@ -21,6 +21,12 @@ class LinersController < ApplicationController
   def edit
   end
 
+  # Import
+  def import
+    Liner.import(params[:file])
+    redirect_to root_url, notice: "Activity data imported"
+  end
+
   # POST /liners
   # POST /liners.json
   def create
