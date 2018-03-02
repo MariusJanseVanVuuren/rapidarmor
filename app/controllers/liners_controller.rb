@@ -25,13 +25,7 @@ class LinersController < ApplicationController
   # POST /liners.json
   def create
     company_name = params[:liner][:company_name]
-    company = Company.find_by name: company_name
-    if !company
-      company_params = Hash.new
-      company_params[:name] = company_name
-      Company.create(company_params)
-      company = Company.find_by name: company_name
-    end
+    company = Company.find_or_create_by name: company_name
     @liner = company.liners.new(liner_params)
 
     respond_to do |format|
