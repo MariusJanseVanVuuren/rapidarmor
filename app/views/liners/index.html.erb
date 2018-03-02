@@ -32,6 +32,14 @@
   </tbody>
 </table>
 
+<div>
+  <h4>Import Liners from CSV file</h4>
+  <%= form_tag import_companies_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+
 <br>
 
 <%= link_to 'New Liner', new_liner_path %>

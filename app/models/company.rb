@@ -3,6 +3,7 @@ class Company < ApplicationRecord
   has_many :users
 
   validates :name, uniqueness: true
+
   require 'csv'
 
   def to_s
