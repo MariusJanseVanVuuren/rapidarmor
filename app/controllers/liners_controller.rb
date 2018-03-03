@@ -77,6 +77,6 @@ class LinersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def liner_params
-      params.require(:liner).permit(:location, :row, :collumn, :structure, :plant)
+      params.require(:liner).permit(:liner_reference, :location, :row, :collumn, :structure, :plant)
     end
 end
