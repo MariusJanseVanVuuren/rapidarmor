@@ -16,10 +16,8 @@ class Liner < ApplicationRecord
       new_params["plant"] = params["plant"]
       new_params["location"] = params["location"]
       new_params["liner_reference"] = params["liner_reference"]
-      binding.pry
       liner = company.liners.new(new_params)
       liner.save
-      binding.pry
     end
   end
 
