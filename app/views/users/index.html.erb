@@ -1,4 +1,4 @@
-
+<%= render 'layouts/header' %>
 <p id="notice"><%= notice %></p>
   <div>
       <td><%= link_to 'Liners', liners_path %></td>
@@ -7,7 +7,7 @@
   </div>
 <h1>Users</h1>
 
-<table>
+<table class="table table-inverse table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -32,7 +32,7 @@
     <% end %>
   </tbody>
 </table>
-<div>
+<div class="container">
   <h4>Import Users from CSV file</h4>
   <%= form_tag import_users_path, multipart: true do %>
     <%= file_field_tag :file %>

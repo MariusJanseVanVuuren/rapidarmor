@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
     company_name = params[:user][:company_name]
-    company = Company.find_or_create_by
+    company = Company.find_or_create_by name: company_name
+    @user = company.users.new(user_params)
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -76,6 +76,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :company_name, :password_digest)
+      params.require(:user).permit(:name, :email, :password_digest)
     end
 end
