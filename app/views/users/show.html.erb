@@ -20,5 +20,16 @@
   <%= @user.password_digest %>
 </p>
 
+
+<p>
+  <td><%= link_to 'Go to Liners', liners_path %></td>
+</p>
+<p>
+  <td><%= link_to 'Go to Companies', liners_path %></td>
+</p>
+<p>
+  <td><%= link_to 'Go to User', liners_path %></td>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
