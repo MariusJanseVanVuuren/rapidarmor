@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<% if !logged_in? %>
+  <% if !current_page?('/login') %>
+    <script type="text/javascript">
+      window.location.href="/login" 
+    </script>
+  <% end %>
+<% end %>
 <html>
   <head>
     <title>RapidArmorLinersSystem</title>
