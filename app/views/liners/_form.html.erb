@@ -13,40 +13,55 @@
 
   <div class="field">
     <%= form.label :company_name %>
-    <%= form.text_field :company_name, id: :liner_company_name %>
+    <%= form.text_field :company_name, id: :liner_company_name, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_field :location, id: :liner_location %>
+    <%= form.text_field :location, id: :liner_location, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :row %>
-    <%= form.text_field :row, id: :liner_row %>
+    <%= form.text_field :row, id: :liner_row, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :collumn %>
-    <%= form.text_field :collumn, id: :liner_collumn %>
+    <%= form.text_field :collumn, id: :liner_collumn, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.text_field :collumn, id: :liner_width, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :collumn, id: :liner_height, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thickness %>
+    <%= form.text_field :collumn, id: :liner_thickness, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :structure %>
-    <%= form.text_field :structure, id: :liner_structure %>
+    <%= form.text_field :structure, id: :liner_structure, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :plant %>
-    <%= form.text_field :plant, id: :liner_plant %>
+    <%= form.text_field :plant, id: :liner_plant, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :liner_reference %>
-    <%= form.text_field :liner_reference, id: :liner_reference %>
+    <%= form.text_field :liner_reference, id: :liner_reference, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <% if !logged_in? %>
-  <% if !current_page?('/login') %>
+  <% if !current_page?('/login') && !current_page?('/register')  %>
     <script type="text/javascript">
-      window.location.href="/login" 
+      window.location.href="/login"
     </script>
   <% end %>
 <% end %>

@@ -10,6 +10,9 @@
       <th>Location</th>
       <th>Row</th>
       <th>Collumn</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Thickness</th>
       <th>Structure</th>
       <th>Plant</th>
       <th>Liner Reference</th>
@@ -24,6 +27,9 @@
         <td><%= liner.location %></td>
         <td><%= liner.row %></td>
         <td><%= liner.collumn %></td>
+        <td><%= liner.width %></td>
+        <td><%= liner.height %></td>
+        <td><%= liner.thickness %></td>
         <td><%= liner.structure %></td>
         <td><%= liner.plant %></td>
         <td><%= liner.liner_reference %></td>
@@ -41,11 +47,13 @@
 <br>
 <br>
 <div class="container border">
-  <div class="col-sm">
-    <h4>Import Liners from CSV file</h4>
-    <%= form_tag import_liners_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag "Import CSV" %>
-    <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h4>Import Liners from CSV file</h4>
+      <%= form_tag import_liners_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import CSV", class: "btn btn-primary"  %>
+      <% end %>
+    </div>
   </div>
 </div>
