@@ -28,16 +28,15 @@
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password, type="password", id: :user_password, class: 'form-control' %>
+    <%= form.password_field :password, id: :user_password, class: 'form-control' %>
   </div>
 
-    <div class="field">
-      <%= form.label :password_confirmation %>
-      <%= form.text_field :password_confirmation,  type="password", id: :user_password_confirmation, class: 'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+  </div>
 
   <div class="actions">
-    <%= form.submit "Register", class: "btn btn-primary" %>
+    <%= form.submit "Create or Update User", class: "btn btn-primary" %>
   </div>
-
 <% end %>
