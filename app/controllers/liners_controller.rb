@@ -48,7 +48,13 @@ class LinersController < ApplicationController
   # PATCH/PUT /liners/1
   # PATCH/PUT /liners/1.json
   def update
+    binding.pry
     respond_to do |format|
+      binding.pry
+      liner = Liner.find_by(liner_reference: liner_params["liner_reference"])
+      original_thickness = liner.original_thickness
+      current_thickness = liner_params["current_thickness"]
+      thickness_loss_per_day = original_thickness - current_thickness
       if @liner.update(liner_params)
         format.html { redirect_to @liner, notice: 'Liner was successfully updated.' }
         format.json { render :show, status: :ok, location: @liner }

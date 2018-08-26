@@ -14,38 +14,28 @@ class Liner < ApplicationRecord
         params = Hash[[header, spreadsheet.row(i)].transpose]
         company_name = params["Company"]
         company = Company.find_or_create_by name: company_name
-
         new_params = Hash.new
+        new_params["liner_reference"] = params["Liner Reference"]
         new_params["row"] = params["Row"]
         new_params["collumn"] =  params["Collumn"]
         new_params["width"] = params["Width"]
         new_params["height"] = params["Height"]
-        new_params["thickness"] = params["Thickness"]
         new_params["structure"] = params["Structure"]
         new_params["plant"] = params["Plant"]
         new_params["location"] = params["Location"]
-        new_params["liner_reference"] = params["Liner Reference"]
         new_params["description"] = params["DESCRIPTION"]
-        liner = company.liners.new(new_params)
-        liner.save
+        if Liner.exists?(liner_reference: new_params["liner_reference"])
+          liner = Liner.find_by(liner_reference: new_params["liner_reference"])
+          new_params["current_thickness"] = params["Thickness"]
+          original_thickness = liner.original_thickness
+          new_params["thickness_loss_per_day"] = (original_thickness.to_f - new_params["current_thickness"].to_f)/(((Time.now.getutc-liner.created_at.utc)/(3600*24)).ceil).to_i
+          liner.update(new_params)
+        else
+          new_params["original_thickness"] = params["Thickness"]
+          liner = company.liners.new(new_params)
+          liner.save
+        end
       end
-
-      #
-      # CSV.foreach(file.path, headers: true) do |row|
-      #   params = row.to_hash
-      #   company_name = params["company name"]
-      #   company = Company.find_or_create_by name: company_name
-      #   new_params = Hash.new
-      #   new_params["row"] = params["row"]
-      #   new_params["collumn"] =  params["collumn"]
-      #   new_params["structure"] = params["structure"]
-      #   new_params["plant"] = params["plant"]
-      #   new_params["location"] = params["location"]
-      #   new_params["liner_reference"] = params["liner reference"]
-      #   liner = company.liners.new(new_params)
-      #   liner.save
-      # end
     end
   end
-
 end

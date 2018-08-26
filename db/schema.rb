@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306180816) do
+ActiveRecord::Schema.define(version: 20180826095255) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 20180306180816) do
     t.datetime "updated_at", null: false
     t.string "height"
     t.string "width"
-    t.string "thickness"
+    t.string "original_thickness"
+    t.float "current_thickness"
+    t.float "thickness_loss_per_day"
+    t.string "description"
     t.index ["company_id"], name: "index_liners_on_company_id"
   end
 
