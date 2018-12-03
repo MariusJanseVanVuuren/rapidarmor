@@ -28,7 +28,7 @@
     <h4>Import Companies from CSV file</h4>
     <%= form_tag import_companies_path, multipart: true do %>
       <%= file_field_tag :file %>
-      <%= submit_tag "Import CSV", class: "btn btn-primary"  %>
+      <%= submit_tag "Import companies from file", class: "btn btn-primary"  %>
     <% end %>
   </div>
 </div>
