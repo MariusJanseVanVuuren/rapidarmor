@@ -12,6 +12,12 @@ class LinersController < ApplicationController
   def show
   end
 
+  def get
+
+    @liner = Liner.find_by(liner_reference: params[:liner][:liner_reference])
+    render :json => @liner.to_json
+  end
+
   # GET /liners/new
   def new
     @liner = Liner.new
