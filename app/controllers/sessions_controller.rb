@@ -6,12 +6,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
+    @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:success] = "Welcome back!"
       log_in @user
       params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
       if request.content_type == 'application/json'
+        puts("Token : "+@user.remember_digest)
+
         render  json: {"token" => @user.remember_digest}
       else
         redirect_to @user
