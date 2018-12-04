@@ -51,7 +51,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pg'
+
 end
 
 group :development do

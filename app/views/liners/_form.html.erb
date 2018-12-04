@@ -33,17 +33,27 @@
 
   <div class="field">
     <%= form.label :width %>
-    <%= form.text_field :collumn, id: :liner_width, class: 'form-control' %>
+    <%= form.text_field :width, id: :liner_width, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :height %>
-    <%= form.text_field :collumn, id: :liner_height, class: 'form-control' %>
+    <%= form.text_field :height, id: :liner_height, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :original_thickness %>
+    <%= form.text_field :original_thickness, id: :liner_thickness, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :thickness %>
-    <%= form.text_field :collumn, id: :liner_thickness, class: 'form-control' %>
+    <%= form.text_field :current_thickness, id: :liner_thickness, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thickness_loss_per_day %>
+    <%= form.text_field :thickness_loss_per_day, id: :liner_thickness, class: 'form-control' %>
   </div>
 
   <div class="field">

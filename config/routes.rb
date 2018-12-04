@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   post    '/liner',      to: 'liners#get'
+  post    '/liner/replace',      to: 'liners#replace'
+  post    '/liner/swap',      to: 'liners#swap'
+  post    '/liner/measurement',      to: 'liners#measure'
 end

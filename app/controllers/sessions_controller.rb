@@ -20,8 +20,14 @@ class SessionsController < ApplicationController
         redirect_to @user
       end
     else
-      flash[:warning] = "You have entered incorrect email and/or password."
-      render :new
+      if request.content_type == 'application/json'
+        render status: 400, json: {
+          message: "incorrect username or password",
+        }.to_json
+      else
+        flash[:warning] = "You have entered incorrect email and/or password."
+        render :new
+      end
     end
   end
 
